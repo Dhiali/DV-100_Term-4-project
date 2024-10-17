@@ -45,7 +45,7 @@
     font-size: 3.5vw;
     text-align: center;
     margin-bottom: 20px; 
-    padding-top: 15%; 
+    padding-top: 13%; 
   }
  
 
@@ -53,7 +53,6 @@
   position: relative;
   width: 150px;
   height: 150px;
-  background: #041639;
   border-radius: 50%;
   overflow: hidden;
   margin: 20px auto;
@@ -77,29 +76,30 @@
   content:'';
   position: absolute;
   inset:6px;
-  background: #041639;
   border-radius: 50%;
  }
 
- .img-fluid img{
+ .box img {
   position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
+  inset: 6px;  
+  width: 90%;
+  height: 90%;
   object-fit: cover;
-
+  border-radius: 50%;
 }
+ 
 
-  .box content{
-    position: absolute;
-    inset: 30px;
-    border: 6px solid blue ;
-    border-radius: 50%;
-    overflow: hidden;
+ /* .content{
+    position: relative;
+  width: 100px;
+  height: 100px;
+  background: #041639;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 20px auto;
   }
 
-  .box content img{
+  .content img{
     position: absolute;
     top:0;
     left:0;
@@ -107,3 +107,19 @@
     height:100%;
     object-fit: fill;
   }
+
+  /*position: absolute;
+  inset: 30px;
+  border: 6px solid blue ;
+  border-radius: 50%;
+  overflow: hidden;
+  
+  .img-fluid img{
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+
+}/

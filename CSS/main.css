@@ -7,7 +7,7 @@
     font-style: normal;
   }
 
-  body{
+  .loading-page{
      font-family: "Rubik Glitch", system-ui;
      font-weight: 400;
      font-style: normal;
@@ -24,6 +24,7 @@
     color:#041639 ;
     -webkit-text-stroke: 0.1vw #587cc5;
     text-transform: uppercase;
+    
 
   }
   
@@ -53,3 +54,104 @@
     }
   }
   
+
+
+  .Lib-page{
+   background: #000000;
+ }
+ 
+
+ nav{
+  display: flex;
+   justify-content: space-between;
+    align-items: center;
+     padding: 20px;
+ }
+
+  .logo{
+    font-family: "Rubik Glitch", system-ui;
+    font-weight: 400;
+    font-style: normal;
+ }
+ 
+ h3{
+   position: relative;
+   font-size: 2.5vw;
+   background: linear-gradient(19deg, #44EEFD 32%, #2F3CAB 50%, #D06DF7 75%);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   text-transform: uppercase;
+   margin: 0;
+   
+
+ }
+
+ .watchlist-button{
+  font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    border: 4px solid #154AB8;
+    border-radius: 15px;
+    color: #154AB8;
+    font-size: 15px;
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s;
+    width: 150px; 
+    height: 30px;
+    padding: 5px 20px;
+    text-align: center;
+     text-decoration: none;
+     display: flex;
+    justify-content:center; 
+    align-items: center; 
+    min-height: 1vh;
+    padding: 20px;
+    margin-right:65vw;
+
+
+  }
+
+  .watchlist-button:hover {
+    background-color: #154AB8;
+    color: white;
+}
+
+.search-bar {
+  padding: 20px 0; /* Add some padding above and below the search bar */
+}
+
+.input-group {
+  max-width: 800px; /* Set a max-width for the input group */
+  margin: 0 auto; /* Center the input group */
+  border-radius: 15px 15px 15px 15px;
+  
+}
+
+.form-control {
+  font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+  border: 2px solid white; /* White border */
+  border-radius: 15px; /* Rounded corners */
+  transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+/* Hover state for the input field */
+.form-control:hover {
+  border-color: #D06DF7; /* Border color on hover */
+}
+
+/* Focus state for the input field */
+.form-control:focus {
+  border-color: #44EEFD; /* Border color while typing */
+  box-shadow: 0 0 5px rgba(68, 238, 253, 0.5); /* Optional: add a subtle shadow */
+}
+
+.input-group-text {
+  border-radius: 15px 15px 15px 15px; /* Rounded corners on the right */
+  background-color: white; /* Ensure background is white */
+  border: 2px solid white; /* Match border with input field */
+}
+

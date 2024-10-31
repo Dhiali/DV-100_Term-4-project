@@ -11,9 +11,6 @@
      font-family: "Rubik Glitch", system-ui;
      font-weight: 400;
      font-style: normal;
-     display:flex;
-     justify-content: center;
-    align-items: center;
     min-height: 100vh;
     background: #041639;
   }
@@ -66,6 +63,7 @@
    justify-content: space-between;
     align-items: center;
      padding: 20px;
+     
  }
 
   .logo{
@@ -94,15 +92,15 @@
     border: 4px solid #154AB8;
     border-radius: 15px;
     color: #154AB8;
-    font-size: 15px;
+    font-size: 2.5;
     background-color: transparent;
     transition: background-color 0.3s, color 0.3s;
     width: 150px; 
     height: 30px;
-    padding: 5px 20px;
+    padding: 10px 20px;
     text-align: center;
-     text-decoration: none;
-     display: flex;
+    text-decoration: none;
+    display: flex;
     justify-content:center; 
     align-items: center; 
     min-height: 1vh;
@@ -117,6 +115,28 @@
     color: white;
 }
 
+@media (max-width: 768px) {
+  .watchlist-button {
+      font-size: 2vw; /* Increase font size for smaller screens */
+      padding: 8px 16px; /* Adjust padding */
+      width: 90%;
+      margin-right:65vw;
+      border: 2px solid #154AB8;
+      border-radius: 8px; /* Increase width for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .watchlist-button {
+      font-size: 1.5vw; /* Further increase font size */
+      padding: 6px 12px; /* Adjust padding */
+      width: 95%; 
+      margin-right:10%;
+      border: 1px solid #154AB8;
+      border-radius: 4px;/* Further increase width */
+  }
+}
+
 .search-bar {
   padding: 20px 0; /* Add some padding above and below the search bar */
 }
@@ -124,18 +144,21 @@
 .input-group {
   max-width: 800px; /* Set a max-width for the input group */
   margin: 0 auto; /* Center the input group */
-  border-radius: 15px 15px 15px 15px;
-  
+  border-radius: 15px;
+  display: flex; /* Use flexbox to align items */
+    flex-direction: row;
 }
 
 .form-control {
+  flex: 1;
   font-family: "Roboto Slab", serif;
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
   border: 2px solid white; /* White border */
   border-radius: 15px; /* Rounded corners */
-  transition: border-color 0.3s; /* Smooth transition for border color */
+  transition: border-color 0.3s; 
+  padding: 10px;/* Smooth transition for border color */
 }
 
 /* Hover state for the input field */
@@ -150,8 +173,61 @@
 }
 
 .input-group-text {
-  border-radius: 15px 15px 15px 15px; /* Rounded corners on the right */
+  border-radius: 15px; /* Rounded corners on the right */
   background-color: white; /* Ensure background is white */
-  border: 2px solid white; /* Match border with input field */
+  border: 2px solid white;
+  padding: 10px 20px; /* Padding inside the button */
+  
+}
+
+.foot-mt-4{
+  background-color: #151414;
+}
+
+H5{
+  color: #44EEFD;
+}
+
+.text-light{
+  color: #fbfefe;
+}
+
+.Social{
+  width: 8vw; 
+  height: 8vh;
+  padding-right:5%;
+  cursor:pointer;
+}
+
+
+.input-group1 {
+  width: 25px; /* Set a max-width for the input group */
+  padding-right: 10%;
+  margin-left: 0%; /* Push it to the right */
+  display: flex;
+  width: auto; /* Use flexbox to align items */
+}
+
+
+.form-control1 {
+  flex: 1; /* Allow the input to grow */
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  border: 2px solid white; /* White border */
+  border-radius: 15px; /* Rounded corners */
+  transition: border-color 0.3s; 
+  padding: 10px; /* Smooth transition for border color */
+}
+
+/* Hover state for the input field */
+.form-control1:hover {
+  border-color: #D06DF7; /* Border color on hover */
+}
+
+/* Focus state for the input field */
+.form-control1:focus {
+  border-color: #44EEFD; /* Border color while typing */
 }
 

@@ -73,6 +73,7 @@
  }
  
  h3{
+  
    position: relative;
    font-size: 2.5vw;
    background: linear-gradient(19deg, #44EEFD 32%, #2F3CAB 50%, #D06DF7 75%);
@@ -110,9 +111,40 @@
 
   }
 
+ .watchlist-button1{
+  font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    border: 4px solid #154AB8;
+    border-radius: 15px;
+    color: #154AB8;
+    font-size: 2.5;
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s;
+    width: 150px; 
+    height: 30px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content:center; 
+    align-items: center; 
+    min-height: 1vh;
+    padding: 20px;
+    margin-left:5vw;
+
+
+  }
+
   .watchlist-button:hover {
     background-color: #154AB8;
     color: white;
+}
+
+.watchlist-button1:hover {
+  background-color: #154AB8;
+  color: white;
 }
 
 @media (max-width: 768px) {
@@ -200,14 +232,12 @@ H5{
 }
 
 
-.input-group1 {
-  width: 25px; /* Set a max-width for the input group */
-  padding-right: 10%;
-  margin-left: 0%; /* Push it to the right */
-  display: flex;
-  width: auto; /* Use flexbox to align items */
-}
 
+.input-group1 {
+  margin-left: auto; /* Push the search bar to the right */
+  margin-right: 5%; /* Create a gap of 10% from the right */
+  flex: 0 0 auto; /* Add margin for spacing */
+}
 
 .form-control1 {
   flex: 1; /* Allow the input to grow */
@@ -221,6 +251,8 @@ H5{
   padding: 10px; /* Smooth transition for border color */
 }
 
+/* You may keep the hover and focus states as they are */
+
 /* Hover state for the input field */
 .form-control1:hover {
   border-color: #D06DF7; /* Border color on hover */
@@ -229,5 +261,146 @@ H5{
 /* Focus state for the input field */
 .form-control1:focus {
   border-color: #44EEFD; /* Border color while typing */
+  box-shadow: 0 0 5px rgba(68, 238, 253, 0.5);
+  outline:none; /* Optional: add a subtle shadow */
+}
+
+.search-results {
+  position: absolute; /* Position relative to the input */
+  background: white; /* Background color */
+  border: 1px solid #ccc; /* Border for the dropdown */
+  border-radius: 5px; /* Rounded corners */
+  z-index: 1000; /* Ensure it appears above other elements */
+  width: 100%; /* Match the width of the input */
+  max-height: 300px; /* Limit height */
+  overflow-y: auto; /* Scroll if too many results */
+  display: none; /* Initially hidden */
+}
+
+.search-result-item {
+  padding: 10px; /* Padding for each item */
+  cursor: pointer; /* Pointer cursor on hover */
+  display: flex; /* Flexbox for alignment */
+  align-items: center; /* Center items vertically */
+}
+
+.search-result-item:hover {
+  background-color: #f0f0f0; /* Highlight on hover */
+}
+
+.search-result-poster {
+  width: 40px; /* Width for the poster image */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px; /* Space between image and text */
+}
+
+
+.movie-details-container {
+  display: flex;
+  align-items: flex-start;
+  background: linear-gradient(19deg, rgba(68, 238, 253, 0.3) 32%, rgba(47, 60, 171, 0.3) 50%, rgba(208, 109, 247, 0.3) 75%);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  padding: 20px;
+  margin: 20px 0;
+  
+}
+
+#movie-poster {
+  flex: 0 0 200px; /* Fixed width for the poster */
+  border-radius: 10px;
+  opacity: 0.8; 
+  margin-top: 5%;/* Make poster slightly transparent */
+}
+.movie-info {
+  margin-left: 20px;
+  flex-grow: 1; /* Allow info section to grow */
+  position: relative; /* Position relative for absolute children */
+}
+.add-to-watchlist{
+  font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    border: 0px solid #9341b4;
+    border-radius: 5px;
+    color: white ;
+    font-size: 1vw;
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s;
+    width: 5vw; 
+    height: 2vh;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content:center; 
+    align-items: center; 
+    padding: 2vw;
+    margin-left: 85%;;
+}
+
+.add-to-watchlist:hover{
+  background-color: #D06DF7;
+    color: black;
+}
+
+#trailer-container {
+  margin-top: 20px;
+}
+
+#movie-title{
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color:#44EEFD;
+  font-size: 5vw;
+}
+
+#movie-synopsis{
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color:#f0f0f0;
+  font-size: 1.2vw;
+}
+
+#movie-rating{
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color:#ffffff;
+  font-size: 1.2vw;
+}
+
+h2{
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color:#44EEFD;
+font-size: 2vw;
+}
+
+#movie-actors{
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color:#ffffff;
+  font-size: 1.2vw;
+}
+
+#movie-directors{
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color:#ffffff;
+  font-size: 1.2vw;
 }
 

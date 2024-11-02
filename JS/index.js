@@ -3,6 +3,8 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const MOVIE_CONTAINER = $('#movie-container');
 const SEARCH_BAR = $('#search-bar');
+const SEARCH__BAR = $('#search-bar1');
+const SEARCH_RESULTS = $('#search-results');
 
 let allMovies = []; // Store all fetched movies
 let displayedMovies = []; // Store currently displayed movies
@@ -179,7 +181,6 @@ function displayMovieDetails(movie) {
     const trailer = movie.videos.results.find(video => video.type === 'Trailer');
     if (trailer) {
         $('#trailer-container').html(`
-            <h3>Trailer</h3>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/${trailer.key}" frameborder="0" allowfullscreen></iframe>
         `);
     } else {
@@ -198,3 +199,73 @@ function redirectToLibrary(event) {
     window.location.href = '/pages/Libary.html'; // Change this to the actual URL of your library page
 }
 
+
+function searchMovies(query) {
+    const url = `${BASE_URL}/search/movie?api_key=${API_KEY}&language=en-US&query=${encodeURIComponent(query)}`;
+
+    $.get(url)
+        .done(data => {
+            displaySearchResults(data.results); // Display search results
+        })
+        .fail(error => {
+            console.error('Error fetching data:', error);
+        });
+}
+
+function displaySearchResults(movies) {
+    SEARCH_RESULTS.empty(); // Clear previous results
+    if (movies.length === 0) {
+        SEARCH_RESULTS.hide(); // Hide dropdown if no results
+        return;
+    }
+
+    // Create dropdown items for each movie
+    movies.forEach(movie => {
+        const resultItem = $(`
+            <div class="search-result-item" data-id="${movie.id}">
+                <img src="${IMG_URL + movie.poster_path}" alt="${movie.title}" class="search-result-poster">
+                <span>${movie.title}</span>
+            </div>
+        `);
+        SEARCH_RESULTS.append(resultItem);
+
+        // Add click event to each result item to redirect to movie details
+        resultItem.on('click', function() {
+            window.location.href = `/pages/im.html?id=${movie.id}`; // Redirect to movie details page
+        });
+    });
+
+    SEARCH_RESULTS.show(); // Show dropdown with results
+}
+
+// Event listener for the search bar
+SEARCH__BAR.on('input', function() {
+    const query = $(this).val().trim();
+    if (query) {
+        searchMovies(query); // Fetch movies based on the search query
+    } else {
+        SEARCH_RESULTS.empty(); // Clear results if search is empty
+        SEARCH_RESULTS.hide(); // Hide dropdown if search is empty
+    }
+});
+
+// Hide dropdown when clicking outside
+$(document).on('click', function(event) {
+    if (!$(event.target).closest('#search').length) {
+        SEARCH_RESULTS.hide(); // Hide dropdown if clicked outside
+    }
+});
+
+// Function to fetch similar movies
+async function fetchSimilarMovies(movieId) {
+    try {
+        const response = await fetch(`${BASE_URL}/movie/${movieId}/similar?api_key=${API_KEY}&language=en-US&page=1`);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        displaySimilarMovies(data.results); // Pass the results to display function
+    } catch (error) {
+        console.error('Error fetching similar movies:', error);
+    }
+}

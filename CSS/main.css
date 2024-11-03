@@ -217,7 +217,21 @@
 }
 
 H5{
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
   color: #44EEFD;
+  font-size: 1.8vw;
+}
+
+H6{
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color: #44EEFD;
+  font-size: 1.5vw;
 }
 
 .text-light{
@@ -318,6 +332,34 @@ H5{
   flex-grow: 1; /* Allow info section to grow */
   position: relative; /* Position relative for absolute children */
 }
+.add-to-watchlist1{
+  font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    border: 0px solid #9341b4;
+    border-radius: 5px;
+    color: white ;
+    font-size: 1vw;
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s;
+    width: 5vw; 
+    height: 2vh;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content:center; 
+    align-items: center; 
+    padding: 2vw;
+    margin-left: 85%;
+}
+
+.add-to-watchlist1:hover{
+  background-color: #D06DF7;
+    color: black;
+}
+
 .add-to-watchlist{
   font-family: "Roboto Slab", serif;
     font-optical-sizing: auto;
@@ -338,14 +380,13 @@ H5{
     justify-content:center; 
     align-items: center; 
     padding: 2vw;
-    margin-left: 85%;;
+  margin-left: -5%;
 }
 
 .add-to-watchlist:hover{
   background-color: #D06DF7;
     color: black;
 }
-
 #trailer-container {
   margin-top: 20px;
 }

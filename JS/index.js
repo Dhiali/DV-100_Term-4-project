@@ -47,6 +47,7 @@ function searchMovies(query) {
             allMovies = data.results; // Update the allMovies array with search results
             displayedMovies = allMovies.slice(0, 25); // Set displayedMovies to the first 25 results
             displayMovies(displayedMovies); // Display the search results
+            displaySearchResults(data.results); // Display search results in dropdown
         })
         .fail(error => {
             console.error('Error fetching data:', error);
@@ -56,6 +57,17 @@ function searchMovies(query) {
 // Event listener for the search bar
 SEARCH_BAR.on('input', function() {
     const query = $(this).val().trim();
+    console.log('Search query:', query); 
+    if (query) {
+        searchMovies(query); // Fetch movies based on the search query
+    } else {
+        getMovies(); // Revert to original random movies if search is empty
+    }
+});
+
+SEARCH__BAR.on('input', function() {
+    const query = $(this).val().trim();
+    console.log('Search query:', query); 
     if (query) {
         searchMovies(query); // Fetch movies based on the search query
     } else {
@@ -106,13 +118,14 @@ $('#high-rated-movies').on('click', function() {
 });
 
 // Function to display movies
+// Update the displayMovies function to handle click events for smaller screens
 function displayMovies(movies) {
     MOVIE_CONTAINER.empty(); // Clear previous movies if any
     if (movies.length === 0) {
         MOVIE_CONTAINER.html('<p>No movies found.</p>'); // Handle no results
         return;
     }
-    // Limit to 25 movies if more than 25 are found
+    
     const moviesToDisplay = movies.slice(0, 25); 
     moviesToDisplay.forEach(movie => {
         const movieElement = $(`
@@ -120,11 +133,10 @@ function displayMovies(movies) {
                 <img src="${IMG_URL + movie.poster_path}" alt="${movie.title}" class="movie-poster" data-id="${movie.id}">
                 <div class="movie-info">
                     <h3>${movie.title}</h3>
-                    <p>Rating: ${movie.vote_average}</p>
                     <div class="button-container">
-                    <button class="add-to-watchlist" data-id="${movie.id}">Add to Watchlist</button>
-                    <a href="/pages/im.html?id=${movie.id}" class="Details">View Details</a>
-                     </div>
+                        <button class="add-to-watchlist" data-id="${movie.id}">Add to Watchlist</button>
+                        <a href="/pages/im.html?id=${movie.id}" class="Details">View Details</a>
+                    </div>
                 </div>
             </div>
         `);
@@ -132,11 +144,20 @@ function displayMovies(movies) {
     });
 
     // Event listener for "Add to Watchlist" button
-$('.add-to-watchlist').on('click', function() {
-    const movieId = $(this).data('id');
-    addToWatchlist(movieId);
-});
+    $('.add-to-watchlist').on('click', function() {
+        const movieId = $(this).data('id');
+        addToWatchlist(movieId);
+    });
+
+    // Event listener for movie poster clicks for smaller screens
+    $('.movie-poster').on('click', function() {
+        const movieDiv = $(this).closest('.movie');
+        movieDiv.toggleClass('active'); // Toggle active class to show/hide movie info
+    });
 }
+
+// Ensure the initial fetch of random movies
+getMovies();
 
 // Initial fetch of random movies
 getMovies();
@@ -200,17 +221,34 @@ function redirectToLibrary(event) {
 }
 
 
+// Function to fetch movies based on search query
 function searchMovies(query) {
     const url = `${BASE_URL}/search/movie?api_key=${API_KEY}&language=en-US&query=${encodeURIComponent(query)}`;
 
     $.get(url)
         .done(data => {
-            displaySearchResults(data.results); // Display search results
+            allMovies = data.results; // Update the allMovies array with search results
+            displayedMovies = allMovies.slice(0, 25); // Set displayedMovies to the first 25 results
+            displayMovies(displayedMovies); // Display the search results
+            displaySearchResults(data.results); // Display search results in dropdown
         })
         .fail(error => {
             console.error('Error fetching data:', error);
         });
 }
+
+// Event listener for the search bar on the movie details page
+$(document).ready(function() {
+    $('#search-bar1').on('input', function() {
+        const query = $(this).val().trim();
+        if (query) {
+            searchMovies(query); // Call the search function with the query
+        } else {
+            $('#search-results').empty(); // Clear search results if the input is empty
+            $('#search-results').hide(); // Hide the dropdown if the search is empty
+        }
+    });
+});
 
 function displaySearchResults(movies) {
     SEARCH_RESULTS.empty(); // Clear previous results
@@ -269,3 +307,6 @@ async function fetchSimilarMovies(movieId) {
         console.error('Error fetching similar movies:', error);
     }
 }
+
+
+// Ensure the search functionality works for the movie details page

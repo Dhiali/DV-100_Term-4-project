@@ -24,7 +24,7 @@
   font-family: "Roboto Slab", serif;
   position: absolute; 
   top: 50%; /* Position from the top */
-  left: 50%; /* Position from the left */
+  left: 40%; /* Position from the left */
   transform: translate(-50%, -50%); /* Center the element */
   color: white; 
   text-align: center; 
@@ -33,17 +33,32 @@
   width: 100%; /* Ensure it takes the full width */
   z-index: 20; 
   cursor: pointer;
+  justify-content: center;
+  font-size:1.8vw;
 }
 
 .movie:hover .movie-info {
   opacity: 1; 
 }
 
+
 .movie-info .btn {
   margin: 5px; /* Space between buttons */
   font-weight: bold; /* Make button text bold */
 }
 
+@media (max-width: 768px) {
+  .movie-info {
+      opacity: 0;
+      font-size: 1vw; /* Hide by default */
+      pointer-events: none; /* Prevent interaction */
+  }
+
+  .movie.active .movie-info {
+      opacity: 1; /* Show when active */
+      pointer-events: auto; /* Allow interaction */
+  }
+}
 
 .all-movies{
   font-family: "Roboto Slab", serif;

@@ -1,118 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Movie Watchlist</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <div class="container">
-        <h1>Movie Watchlist</h1>
-        <input type="text" id="movie-input" placeholder="Enter movie title">
-        <button id="add-button">Add Movie</button>
-        <ul id="watchlist"></ul>
-    </div>
-    <script src="script.js"></script>
-    
-    <section class="watchlist" id="watchlist">
-        <h2 class="heading">Your Watchlist</h2>
-        <div class="coming-container">
-            <div class="swipper-wrapper"></div>
-            <div class="swiper-slide box">
-                <div class="box-img">
-                    <img src="Venom.jpeg" alt="">
-                </div>
-                <h3>Venom</h3>
-                <span>120 min¦ Action</span>
-            </div>
-
-            <div class="swiper-slide box">
-                <div class="box-img">
-                    <img src="Transformers One.jpeg" alt="">
-                </div>
-                <h3>Transformers One</h3>
-                <span>104 min¦ Sci-fi</span>
-            </div>
-
-
-            <div class="swiper-slide box">
-                <div class="box-img">
-                    <img src="Joker.jpeg" alt="">
-                </div>
-                <h3>Joker</h3>
-                <span>122 min¦ Thriller</span>
-            </div>
-
-
-            <div class="swiper-slide box">
-                <div class="box-img">
-                    <img src="Warcraft.jpeg" alt="">
-                </div>
-                <h3>Warcraft</h3>
-                <span>123 min¦ Fantasy</span>
-            </div>
-
-            <div class="swiper-slide box">
-                <div class="box-img">
-                    <img src="Moana.jpeg" alt="">
-                </div>
-                <h3>Moana</h3>
-                <span>107 min¦ Family</span>
-            </div>
-
-            <div class="swiper-slide box">
-                <div class="box-img">
-                    <img src="Watchmen.jpeg" alt="">
-                </div>
-                <h3>Watchmen</h3>
-                <span>165 min¦ Action</span>
-            </div>
-
-            <div class="swiper-slide box">
-                <div class="box-img">
-                    <img src="Beetlejuice Beetlejuice.jpeg" alt="">
-                </div>
-                <h3>Beetlejuice Beetlejuice</h3>
-                <span>104 min¦ Comedy</span>
-            </div>
-
-
-            <div class="swiper-slide box">
-                <div class="box-img">
-                    <img src="It.jpeg" alt="">
-                </div>
-                <h3>It</h3>
-                <span>135 min¦ Horror</span>
-            </div>
-
-
-            <div class="swiper-slide box">
-                <div class="box-img">
-                    <img src="Scream.jpeg" alt="">
-                </div>
-                <h3>Scream</h3>
-                <span>111 min¦ Horror</span>
-            </div>
-
-
-            <div class="swiper-slide box">
-                <div class="box-img">
-                    <img src="Coco.jpeg" alt="">
-                </div>
-                <h3>Coco</h3>
-                <span>105 min¦ Family</span>
-            </div>
-        </div>
-    </section>
-    <section>
-        <div class="coming-containerswiper">
-            <div class="swipper-wrapper">
-
-            </div>
-        </div>
-    </section>
-
-    </section>
+  <div class="wrapper">
+    <form action="">
+      <h1>Sign In</h1>
+      <div class="input-box">
+        <input type="text" placeholder="Username" required>
+        <i class='bx bxs-user'></i>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Password" required>
+        <i class='bx bxs-lock-alt' ></i>
+      </div>
+      <div class="remember-forgot">
+        <label><input type="checkbox">Remember Me</label>
+        <a href="#">Forgot Password</a>
+      </div>
+      <button type="submit" class="btn">Sign In</button>
+      <div class="register-link">
+        <p>Dont have an account? <a href="#">Register</a></p>
+      </div>
+    </form>
+  </div>
 </body>
 </html>

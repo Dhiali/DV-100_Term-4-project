@@ -318,19 +318,52 @@ H6{
   overflow: hidden;
   padding: 20px;
   margin: 20px 0;
-  
 }
 
 #movie-poster {
-  flex: 0 0 200px; /* Fixed width for the poster */
+  flex: 0 0 200px; /* Fixed width for the poster on larger screens */
   border-radius: 10px;
   opacity: 0.8; 
-  margin-top: 5%;/* Make poster slightly transparent */
+  margin-top: 5%; /* Make poster slightly transparent */
 }
+
 .movie-info {
-  margin-left: 20px;
+  margin-left: 20px; /* Space between poster and info */
   flex-grow: 1; /* Allow info section to grow */
   position: relative; /* Position relative for absolute children */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1068px) {
+  .movie-details-container {
+      flex-direction: column; /* Stack elements on smaller screens */
+      align-items: center; /* Center align items */
+  }
+
+  #movie-poster {
+      flex: 0 0 150px; /* Reduce poster size on smaller screens */
+      margin: 0 auto; /* Center the poster */
+  }
+
+  .movie-info {
+      margin-left: 0; /* Remove left margin on small screens */
+      text-align: center; /* Center align text */
+  }
+}
+
+@media (max-width: 480px) {
+  #movie-poster {
+      flex: 0 0 120px; /* Further reduce poster size on very small screens */
+  }
+
+  #movie-title {
+      font-size: 5vw; /* Adjust title size */
+  }
+
+  #movie-synopsis, #movie-rating, #movie-directors, #movie-actors {
+      font-size: 4vw;
+      flex-wrap: wrap; /* Adjust font size for smaller screens */
+  }
 }
 .add-to-watchlist1{
   font-family: "Roboto Slab", serif;

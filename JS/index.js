@@ -6,6 +6,10 @@ const SEARCH_BAR = $('#search-bar');
 const SEARCH__BAR = $('#search-bar1');
 const SEARCH_RESULTS = $('#search-results');
 
+$('#search-loading').on('click', function() {
+    window.location.href = '/pages/Libary.html'; // Redirect to library page
+});
+
 let allMovies = []; // Store all fetched movies
 let displayedMovies = []; // Store currently displayed movies
 

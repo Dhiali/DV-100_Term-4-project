@@ -1,69 +1,82 @@
-*{
-    padding: 0;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
-    box-sizing: border-box;
-    font-family:"Poppins", sans-serif;
+    padding: 20px;
 }
 
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: url(mathew-schwartz-UFqKI4QWd2k-unsplash.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
-    color: #fff;
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.registration-form {
-    width: 420px;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, .2);
-    backdrop-filter: blur(9px);
-    color: #fff;
-    border-radius: 12px;
-    padding: 30px 40px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-}
-
-.registration-form h1 {
-    font-size: 36px;
+h1 {
     text-align: center;
-    text-transform: uppercase;
-    margin: 40px 0;
 }
 
-.registration-form p{
-    font-size: 20px;
-    margin: 15px 0;
+input {
+    width: 70%;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
 }
 
-
-.registration-form input{
-    font-size: 16px;
-    padding: 15px 10px;
-    width: 100%;
-    border: 0;
-    border-radius: 5px;
-    outline: none;
-}
-
-.registration-form button{
-    font-size: 18px;
-    font-weight: bold;
-    margin: 20px 0;
+button {
     padding: 10px 15px;
-    width: 50%;
-    border: 0;
-    border-radius: 5px;
-    background-color: #fff;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
 }
 
-.registration-form button:hover{
-    color: blueviolet;
+button:hover {
+    background-color: #218838;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.remove-button {
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.remove-button:hover {
+    background: #c82333;
+}
+
+.coming-container{
+    display: grid;
+    gap: 1rem;
+    max-width: 968px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+}
+
+.coming-container .box-img img:hover{
+    transform: translateY(0);
+}
+
+.coming-container .box{
+    width: 100px;
 }

@@ -1,0 +1,258 @@
+.movie {
+  position: relative; 
+  flex: 0 0 16%; 
+  box-sizing: border-box; 
+  margin-bottom: 20px; 
+  transition: transform 0.3s; 
+}
+
+.movie:hover {
+  transform: scale(1.05); 
+}
+
+.movie img {
+  width: 100%; 
+  height: auto; 
+  transition: opacity 0.3s; 
+}
+
+.movie:hover img {
+  opacity: 0.3; 
+}
+
+.movie-info {
+  font-family: "Roboto Slab", serif;
+  position: absolute; 
+  top: 50%; /* Position from the top */
+  left: 40%; /* Position from the left */
+  transform: translate(-50%, -50%); /* Center the element */
+  color: white; 
+  text-align: center; 
+  opacity: 0; 
+  transition: opacity 0.3s;
+  width: 100%; /* Ensure it takes the full width */
+  z-index: 20; 
+  cursor: pointer;
+  justify-content: center;
+  font-size:1.8vw;
+}
+
+.movie:hover .movie-info {
+  opacity: 1; 
+}
+
+
+.movie-info .btn {
+  margin: 5px; /* Space between buttons */
+  font-weight: bold; /* Make button text bold */
+}
+
+@media (max-width: 768px) {
+  .movie-info {
+      opacity: 0;
+      font-size: 1vw; /* Hide by default */
+      pointer-events: none; /* Prevent interaction */
+  }
+
+  .movie.active .movie-info {
+      opacity: 1; /* Show when active */
+      pointer-events: auto; /* Allow interaction */
+  }
+}
+
+.all-movies{
+  font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    border: 4px solid #2F3CAB;
+    border-radius: 15px;
+    color: white ;
+    font-size: 1.4vw;
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s;
+    width: 150px; 
+    height: 30px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content:center; 
+    align-items: center; 
+    min-height: 1vh;
+    padding: 20px;
+    
+
+
+  }
+
+  .all-movies:hover {
+    background-color: #2F3CAB;
+    color: white;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Adjust as necessary for spacing */
+}
+
+
+.horror-movies{
+  font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    border: 4px solid #361460;
+    border-radius: 15px;
+    color: white ;
+    font-size: 1.4vw;
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s;
+    width: 150px; 
+    height: 30px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content:center; 
+    align-items: center; 
+    min-height: 1vh;
+    padding: 20px;
+   
+
+
+  }
+
+  .horror-movies:hover {
+    background-color: #361460;
+    color: white;
+}
+
+.year-movies{
+  font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    border: 4px solid #57F72F;
+    border-radius: 15px;
+    color: white ;
+    font-size: 1.4vw;
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s;
+    width: 150px; 
+    height: 30px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content:center; 
+    align-items: center; 
+    min-height: 1vh;
+    padding: 20px;
+ 
+
+
+  }
+
+  .year-movies:hover {
+    background-color: #57F72F;
+    color: black;
+}
+
+.high-rated-movies{
+  font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    border: 4px solid #D06DF7;
+    border-radius: 15px;
+    color: white ;
+    font-size: 1.4vw;
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s;
+    width: 150px; 
+    height: 30px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content:center; 
+    align-items: center; 
+    min-height: 1vh;
+    padding: 20px;
+    
+
+
+  }
+
+  .high-rated-movies:hover {
+    background-color: #D06DF7;
+    color: black;
+}
+
+.button-container {
+  display: flex; /* Use flexbox to arrange buttons in a row */
+  justify-content: center; /* Center the buttons horizontally */
+  gap: 10px; /* Space between buttons */
+}
+
+.add-to-watchlist{
+  font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    border: 0px solid #9341b4;
+    border-radius: 5px;
+    color: white ;
+    font-size: 1vw;
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s;
+    width: 5vw; 
+    height: 2vh;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content:center; 
+    align-items: center; 
+    padding: 2vw;
+  gap: 10px;
+  top: 50%;
+  left: 50%;
+}
+
+.add-to-watchlist:hover{
+  background-color: #D06DF7;
+    color: black;
+}
+
+.Details{
+  font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    border: 0px solid #57F72F;
+    border-radius: 5px;
+    color: white ;
+    font-size: 1vw;
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s;
+    width: 5vw; 
+    height: 2vh;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content:center; 
+    align-items: center; 
+    padding: 2vw;
+  gap: 10px;
+  top: 50%;
+  left: 50%;
+}
+
+.Details:hover{
+  background-color: #57F72F;
+    color: black;
+}

@@ -1,0 +1,447 @@
+.rubik-glitch-regular {
+    margin:0; 
+    padding:0;
+    box-sizing: border-box; 
+    font-family: "Rubik Glitch", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .loading-page{
+     font-family: "Rubik Glitch", system-ui;
+     font-weight: 400;
+     font-style: normal;
+    min-height: 100vh;
+    background: #041639;
+  }
+  
+  h1{
+    position: relative;
+    font-size: 10vw;
+    color:#041639 ;
+    -webkit-text-stroke: 0.1vw #587cc5;
+    text-transform: uppercase;
+    
+
+  }
+  
+  h1::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left:0;
+    width:0%;
+    height:100%;
+    background: linear-gradient(19deg, #44EEFD 32%, #2F3CAB 50%, #D06DF7 75%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #D06DF7;
+    -webkit-text-stroke: 0.0vw ;
+    border-right: 2px solid #D06DF7 ;
+    overflow: hidden;
+    animation: animate 7s linear infinite;
+  }
+
+  @keyframes animate {
+    0%, 10%, 100% {
+        width:0;
+    }
+    70%, 90% {
+        width:100%;
+    }
+  }
+  
+
+
+  .Lib-page{
+   background: #000000;
+ }
+ 
+
+ nav{
+  display: flex;
+   justify-content: space-between;
+    align-items: center;
+     padding: 20px;
+     
+ }
+
+  .logo{
+    font-family: "Rubik Glitch", system-ui;
+    font-weight: 400;
+    font-style: normal;
+ }
+ 
+ h3{
+  
+   position: relative;
+   font-size: 2.5vw;
+   background: linear-gradient(19deg, #44EEFD 32%, #2F3CAB 50%, #D06DF7 75%);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   text-transform: uppercase;
+   margin: 0;
+   
+
+ }
+
+ .watchlist-button{
+  font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    border: 4px solid #154AB8;
+    border-radius: 15px;
+    color: #154AB8;
+    font-size: 2.5;
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s;
+    width: 150px; 
+    height: 30px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content:center; 
+    align-items: center; 
+    min-height: 1vh;
+    padding: 20px;
+    margin-right:65vw;
+
+
+  }
+
+ .watchlist-button1{
+  font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    border: 4px solid #154AB8;
+    border-radius: 15px;
+    color: #154AB8;
+    font-size: 2.5;
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s;
+    width: 150px; 
+    height: 30px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content:center; 
+    align-items: center; 
+    min-height: 1vh;
+    padding: 20px;
+    margin-left:5vw;
+
+
+  }
+
+  .watchlist-button:hover {
+    background-color: #154AB8;
+    color: white;
+}
+
+.watchlist-button1:hover {
+  background-color: #154AB8;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .watchlist-button {
+      font-size: 2vw; /* Increase font size for smaller screens */
+      padding: 8px 16px; /* Adjust padding */
+      width: 90%;
+      margin-right:65vw;
+      border: 2px solid #154AB8;
+      border-radius: 8px; /* Increase width for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .watchlist-button {
+      font-size: 1.5vw; /* Further increase font size */
+      padding: 6px 12px; /* Adjust padding */
+      width: 95%; 
+      margin-right:10%;
+      border: 1px solid #154AB8;
+      border-radius: 4px;/* Further increase width */
+  }
+}
+
+.search-bar {
+  padding: 20px 0; /* Add some padding above and below the search bar */
+}
+
+.input-group {
+  max-width: 800px; /* Set a max-width for the input group */
+  margin: 0 auto; /* Center the input group */
+  border-radius: 15px;
+  display: flex; /* Use flexbox to align items */
+    flex-direction: row;
+}
+
+.form-control {
+  flex: 1;
+  font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+  border: 2px solid white; /* White border */
+  border-radius: 15px; /* Rounded corners */
+  transition: border-color 0.3s; 
+  padding: 10px;/* Smooth transition for border color */
+}
+
+/* Hover state for the input field */
+.form-control:hover {
+  border-color: #D06DF7; /* Border color on hover */
+}
+
+/* Focus state for the input field */
+.form-control:focus {
+  border-color: #44EEFD; /* Border color while typing */
+  box-shadow: 0 0 5px rgba(68, 238, 253, 0.5); /* Optional: add a subtle shadow */
+}
+
+.input-group-text {
+  border-radius: 15px; /* Rounded corners on the right */
+  background-color: white; /* Ensure background is white */
+  border: 2px solid white;
+  padding: 10px 20px; /* Padding inside the button */
+  
+}
+
+.foot-mt-4{
+  background-color: #151414;
+}
+
+H5{
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color: #44EEFD;
+  font-size: 1.8vw;
+}
+
+H6{
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color: #44EEFD;
+  font-size: 1.5vw;
+}
+
+.text-light{
+  color: #fbfefe;
+}
+
+.Social{
+  width: 8vw; 
+  height: 8vh;
+  padding-right:5%;
+  cursor:pointer;
+}
+
+
+
+.input-group1 {
+  margin-left: auto; /* Push the search bar to the right */
+  margin-right: 5%; /* Create a gap of 10% from the right */
+  flex: 0 0 auto; /* Add margin for spacing */
+}
+
+.form-control1 {
+  flex: 1; /* Allow the input to grow */
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  border: 2px solid white; /* White border */
+  border-radius: 15px; /* Rounded corners */
+  transition: border-color 0.3s; 
+  padding: 10px; /* Smooth transition for border color */
+}
+
+/* You may keep the hover and focus states as they are */
+
+/* Hover state for the input field */
+.form-control1:hover {
+  border-color: #D06DF7; /* Border color on hover */
+}
+
+/* Focus state for the input field */
+.form-control1:focus {
+  border-color: #44EEFD; /* Border color while typing */
+  box-shadow: 0 0 5px rgba(68, 238, 253, 0.5);
+  outline:none; /* Optional: add a subtle shadow */
+}
+
+.search-results {
+  position: absolute; /* Position relative to the input */
+  background: white; /* Background color */
+  border: 1px solid #ccc; /* Border for the dropdown */
+  border-radius: 5px; /* Rounded corners */
+  z-index: 1000; /* Ensure it appears above other elements */
+  width: 100%; /* Match the width of the input */
+  max-height: 300px; /* Limit height */
+  overflow-y: auto; /* Scroll if too many results */
+  display: none; /* Initially hidden */
+}
+
+.search-result-item {
+  padding: 10px; /* Padding for each item */
+  cursor: pointer; /* Pointer cursor on hover */
+  display: flex; /* Flexbox for alignment */
+  align-items: center; /* Center items vertically */
+}
+
+.search-result-item:hover {
+  background-color: #f0f0f0; /* Highlight on hover */
+}
+
+.search-result-poster {
+  width: 40px; /* Width for the poster image */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px; /* Space between image and text */
+}
+
+
+.movie-details-container {
+  display: flex;
+  align-items: flex-start;
+  background: linear-gradient(19deg, rgba(68, 238, 253, 0.3) 32%, rgba(47, 60, 171, 0.3) 50%, rgba(208, 109, 247, 0.3) 75%);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  padding: 20px;
+  margin: 20px 0;
+  
+}
+
+#movie-poster {
+  flex: 0 0 200px; /* Fixed width for the poster */
+  border-radius: 10px;
+  opacity: 0.8; 
+  margin-top: 5%;/* Make poster slightly transparent */
+}
+.movie-info {
+  margin-left: 20px;
+  flex-grow: 1; /* Allow info section to grow */
+  position: relative; /* Position relative for absolute children */
+}
+.add-to-watchlist1{
+  font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    border: 0px solid #9341b4;
+    border-radius: 5px;
+    color: white ;
+    font-size: 1vw;
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s;
+    width: 5vw; 
+    height: 2vh;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content:center; 
+    align-items: center; 
+    padding: 2vw;
+    margin-left: 85%;
+}
+
+.add-to-watchlist1:hover{
+  background-color: #D06DF7;
+    color: black;
+}
+
+.add-to-watchlist{
+  font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    border: 0px solid #9341b4;
+    border-radius: 5px;
+    color: white ;
+    font-size: 1vw;
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s;
+    width: 5vw; 
+    height: 2vh;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content:center; 
+    align-items: center; 
+    padding: 2vw;
+  margin-left: -5%;
+}
+
+.add-to-watchlist:hover{
+  background-color: #D06DF7;
+    color: black;
+}
+#trailer-container {
+  margin-top: 20px;
+}
+
+#movie-title{
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color:#44EEFD;
+  font-size: 5vw;
+}
+
+#movie-synopsis{
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color:#f0f0f0;
+  font-size: 1.2vw;
+}
+
+#movie-rating{
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color:#ffffff;
+  font-size: 1.2vw;
+}
+
+h2{
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color:#44EEFD;
+font-size: 2vw;
+}
+
+#movie-actors{
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color:#ffffff;
+  font-size: 1.2vw;
+}
+
+#movie-directors{
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color:#ffffff;
+  font-size: 1.2vw;
+}
+

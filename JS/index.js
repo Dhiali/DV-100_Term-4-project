@@ -1,5 +1,3 @@
-
-
 const API_KEY = '38e31e29ce2d56fe120f64eb8b9c0aa1'; 
 const BASE_URL = 'https://api.themoviedb.org/3';
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
@@ -404,7 +402,7 @@ loadWatchlist();
 function addToWatchlist(movieId) {
     const watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
     const movie = allMovies.find(movie => movie.id === movieId); 
-    if (movie && !watchlist.some(m => m.id === movieId)) { // Check if movie already exists
+    if (movie && !watchlist.some(m => m.id === movieId)) { 
         watchlist.push(movie);
         localStorage.setItem('watchlist', JSON.stringify(watchlist));
         alert(`${movie.title} has been added to your watchlist!`); 

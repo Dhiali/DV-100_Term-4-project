@@ -486,9 +486,9 @@ font-size: 2vw;
   border-radius: 3%;
 }
 .carousel-caption {
-  background-color: rgba(0, 0, 0, 0.7); /* Black background with 70% opacity */
-  padding: 10px; /* Add some padding */
-  border-radius: 5px; /* Optional: Add rounded corners */
+  background-color: rgba(0, 0, 0, 0.7); 
+  padding: 2vw; 
+  border-radius: 2vw; 
 }
 
 .carousel-caption h5,
@@ -497,7 +497,8 @@ font-size: 2vw;
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
-  color: white; /* Change text color to white for better contrast */
+  color: white; 
+  font-size: 2vw;
 }
 .slider-section{
   padding-top: 5%;
@@ -530,7 +531,7 @@ padding-bottom: 5%;
 }
 .wrapper{
   margin-top: 5%;
-  width: 420px;
+  width: 50vw;
     background: transparent;
     border: 4px solid #44EEFD;
     backdrop-filter: blur(9px);
@@ -541,7 +542,7 @@ padding-bottom: 5%;
 }
 .wrapper h7 {
   text-align: center; 
-  font-size: 24px; 
+  font-size: 3vw; 
   margin-bottom: 20px;
   justify-content: center; 
 }
@@ -561,7 +562,7 @@ padding-bottom: 5%;
   outline: none;
   border: 2px solid rgba(255, 255, 255, .2);
   border-radius: 40px;
-  font-size: 16px;
+  font-size: 1.3vw;
   color: #fff;
   padding: 20px 45px 20px 20px;
   transition: border-color 0.3s;
@@ -579,7 +580,7 @@ padding-bottom: 5%;
   right: 20px;
   top: 30%;
   transform: translate(-50%);
-  font-size: 20px;
+  font-size: 1.3vw;
 
 }
 
@@ -587,7 +588,7 @@ padding-bottom: 5%;
 .wrapper .remember-forgot{
   display: flex;
   justify-content: space-between;
-  font-size: 14.5px;
+  font-size: 1.3vw;
   margin: -15px 0 15px;
 }
 
@@ -618,7 +619,7 @@ padding-bottom: 5%;
   border-radius: 40px;
   box-shadow: 0 0 10px rgba(0, 0, 0, .1);
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1.5vw;
   color: #333; 
   font-weight: 600;
   transition: background-color 0.3s, color 0.3s; 
@@ -631,7 +632,7 @@ padding-bottom: 5%;
 }
 
 .wrapper .register-link{
-  font-size: 14.5px;
+  font-size: 1.3vw;
   text-align: center;
   margin: 20px 0 15px;
 
@@ -668,20 +669,20 @@ padding-bottom: 5%;
 
 .movie {
   display:flex-start;
-  flex-direction: column; /* Stack the image and title vertically */
-  align-items: center; /* Center the contents */
-  margin: 10px; /* Add some margin for spacing */
+  flex-direction: column; 
+  align-items: center; 
+  margin: 10px; 
 }
 
 .movie img {
-  width: 100%; /* Make the image take full width of the container */
-  height: auto; /* Maintain the aspect ratio */
-  max-width: 150px; /* Set a maximum width for the images */
-  border-radius: 8px; /* Add some border radius for aesthetics */
+  width: 100%; 
+  height: auto; 
+  max-width: 150px; 
+  border-radius: 8px; 
 }
 
 #watchlist-container {
-  display: flex; /* Use flexbox to align items side by side */
-  flex-wrap: wrap; /* Allow wrapping to the next line if necessary */
-  justify-content: space-around; /* Space items evenly */
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: space-around; 
 }

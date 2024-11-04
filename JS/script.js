@@ -45,10 +45,10 @@ function handleSignIn(event) {
         localStorage.setItem('username', username); 
         $('#signed-in-user').text(username); // Store the username in local storage
         localStorage.setItem('redirectTo', 'whosWatching'); 
-        window.location.href = '/pages/loading.html'; // Redirect to loading page
+        window.location.href = '/pages/loading.html'; 
      
-        $('#signin-error-message').text(''); // Clear error message
-        $('#signin-success-message').text('Sign in successful!'); // Display success message
+        $('#signin-error-message').text(''); 
+        $('#signin-success-message').text('Sign in successful!'); 
         console.log('Sign in successful!');
         console.log('Username: ' + username); // Log the username
         // Redirect to loading page

@@ -23,14 +23,14 @@
 .movie-info {
   font-family: "Roboto Slab", serif;
   position: absolute; 
-  top: 50%; /* Position from the top */
-  left: 40%; /* Position from the left */
-  transform: translate(-50%, -50%); /* Center the element */
+  top: 50%; 
+  left: 40%; 
+  transform: translate(-50%, -50%); 
   color: white; 
   text-align: center; 
   opacity: 0; 
   transition: opacity 0.3s;
-  width: 100%; /* Ensure it takes the full width */
+  width: 100%; 
   z-index: 20; 
   cursor: pointer;
   justify-content: center;
@@ -43,8 +43,8 @@
 
 
 .movie-info .btn {
-  margin: 5px; /* Space between buttons */
-  font-weight: bold; /* Make button text bold */
+  margin: 5px; 
+  font-weight: bold; 
 }
 
 @media (max-width: 768px) {
@@ -94,7 +94,7 @@
 .filter-buttons {
   display: flex;
   justify-content: center;
-  gap: 10px; /* Adjust as necessary for spacing */
+  gap: 10px; 
 }
 
 
@@ -192,9 +192,9 @@
 }
 
 .button-container {
-  display: flex; /* Use flexbox to arrange buttons in a row */
-  justify-content: center; /* Center the buttons horizontally */
-  gap: 10px; /* Space between buttons */
+  display: flex; 
+  justify-content: center; 
+  gap: 10px; 
 }
 
 .add-to-watchlist{

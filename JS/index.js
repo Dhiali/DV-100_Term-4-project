@@ -1,4 +1,6 @@
-const API_KEY = '38e31e29ce2d56fe120f64eb8b9c0aa1'; // Your TMDb API key
+
+
+const API_KEY = '38e31e29ce2d56fe120f64eb8b9c0aa1'; 
 const BASE_URL = 'https://api.themoviedb.org/3';
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const MOVIE_CONTAINER = $('#movie-container');
@@ -7,11 +9,12 @@ const SEARCH__BAR = $('#search-bar1');
 const SEARCH_RESULTS = $('#search-results');
 
 $('#search-loading').on('click', function() {
-    window.location.href = '/pages/Libary.html'; // Redirect to library page
+    window.location.href = '/pages/Libary.html'; 
 });
 
-let allMovies = []; // Store all fetched movies
-let displayedMovies = []; // Store currently displayed movies
+let allMovies = []; 
+let displayedMovies = []; 
+
 
 // Function to fetch movies using the discover endpoint
 function getMovies() {
@@ -23,15 +26,15 @@ function getMovies() {
         $.get(url)
             .done(data => {
                 console.log(`Fetched ${data.results.length} movies from page ${page}.`);
-                allMovies.push(...data.results); // Add results to the allMovies array
+                allMovies.push(...data.results); 
 
-                // If we have less than 25 movies, fetch the next page
+                
                 if (allMovies.length < 25 && data.results.length > 0) {
                     page++;
-                    fetchPage(); // Fetch the next page
+                    fetchPage(); 
                 } else {
                     displayedMovies = allMovies.slice(0, 25); // Display the first 25 movies
-                    displayMovies(displayedMovies); // Display the first 25 movies
+                    displayMovies(displayedMovies); 
                 }
             })
             .fail(error => {
@@ -48,10 +51,10 @@ function searchMovies(query) {
 
     $.get(url)
         .done(data => {
-            allMovies = data.results; // Update the allMovies array with search results
+            allMovies = data.results; // Update the allMovies array with the search results
             displayedMovies = allMovies.slice(0, 25); // Set displayedMovies to the first 25 results
             displayMovies(displayedMovies); // Display the search results
-            displaySearchResults(data.results); // Display search results in dropdown
+            displaySearchResults(data.results); // Display search results in a dropdown
         })
         .fail(error => {
             console.error('Error fetching data:', error);
@@ -73,9 +76,9 @@ SEARCH__BAR.on('input', function() {
     const query = $(this).val().trim();
     console.log('Search query:', query); 
     if (query) {
-        searchMovies(query); // Fetch movies based on the search query
+        searchMovies(query);
     } else {
-        getMovies(); // Revert to original random movies if search is empty
+        getMovies(); 
     }
 });
 
@@ -85,10 +88,10 @@ function filterMovies(filterType) {
 
     switch (filterType) {
         case 'all':
-            filteredMovies = allMovies; // Show all movies
+            filteredMovies = allMovies; 
             break;
         case 'horror':
-            filteredMovies = allMovies.filter(movie => movie.genre_ids.includes(27)); // Genre ID for Horror is 27
+            filteredMovies = allMovies.filter(movie => movie.genre_ids.includes(27)); 
             break;
         case '2024':
             filteredMovies = allMovies.filter(movie => new Date(movie.release_date).getFullYear() === 2024);
@@ -100,7 +103,7 @@ function filterMovies(filterType) {
             filteredMovies = allMovies;
     }
 
-    displayedMovies = filteredMovies.slice(0, 25); // Update displayedMovies to the first 25 of the filtered results
+    displayedMovies = filteredMovies.slice(0, 25); 
     displayMovies(displayedMovies); // Display the filtered movies
 }
 
@@ -121,12 +124,12 @@ $('#high-rated-movies').on('click', function() {
     filterMovies('high-rated');
 });
 
-// Function to display movies
-// Update the displayMovies function to handle click events for smaller screens
+
+
 function displayMovies(movies) {
     MOVIE_CONTAINER.empty(); // Clear previous movies if any
     if (movies.length === 0) {
-        MOVIE_CONTAINER.html('<p>No movies found.</p>'); // Handle no results
+        MOVIE_CONTAINER.html('<p>No movies found.</p>'); 
         return;
     }
     
@@ -160,10 +163,7 @@ function displayMovies(movies) {
     });
 }
 
-// Ensure the initial fetch of random movies
-getMovies();
 
-// Initial fetch of random movies
 getMovies();
 
 // Function to get the movie ID from the URL
@@ -194,6 +194,8 @@ function displayMovieDetails(movie) {
     $('#movie-synopsis').text(movie.overview);
     $('#movie-rating').text(movie.vote_average);
 
+
+    $('#watchlist-button').data('id', movie.id); 
     // Display directors
     const directors = movie.credits.crew.filter(crewMember => crewMember.job === 'Director');
     $('#movie-directors').text(directors.map(d => d.name).join(', '));
@@ -213,15 +215,15 @@ function displayMovieDetails(movie) {
     }
 }
 
-// Initialize the movie details page
+
 if (window.location.pathname === '/pages/im.html') {
     const movieId = getMovieId();
     fetchMovieDetails(movieId);
 }
 
 function redirectToLibrary(event) {
-    event.preventDefault(); // Prevent the default form submission
-    window.location.href = '/pages/Libary.html'; // Change this to the actual URL of your library page
+    event.preventDefault(); 
+    window.location.href = '/pages/Libary.html'; 
 }
 
 
@@ -241,15 +243,15 @@ function searchMovies(query) {
         });
 }
 
-// Event listener for the search bar on the movie details page
+
 $(document).ready(function() {
     $('#search-bar1').on('input', function() {
         const query = $(this).val().trim();
         if (query) {
-            searchMovies(query); // Call the search function with the query
+            searchMovies(query); 
         } else {
-            $('#search-results').empty(); // Clear search results if the input is empty
-            $('#search-results').hide(); // Hide the dropdown if the search is empty
+            $('#search-results').empty(); 
+            $('#search-results').hide(); 
         }
     });
 });
@@ -271,7 +273,7 @@ function displaySearchResults(movies) {
         `);
         SEARCH_RESULTS.append(resultItem);
 
-        // Add click event to each result item to redirect to movie details
+        
         resultItem.on('click', function() {
             window.location.href = `/pages/im.html?id=${movie.id}`; // Redirect to movie details page
         });
@@ -311,6 +313,185 @@ async function fetchSimilarMovies(movieId) {
         console.error('Error fetching similar movies:', error);
     }
 }
+function getNewlyReleasedMovies() {
+    const url = `${BASE_URL}/movie/now_playing?api_key=${API_KEY}&language=en-US&page=1`;
+
+    $.get(url)
+        .done(data => {
+            console.log(data); // Log the fetched data
+            const movies = data.results; // Get the results
+            let sliderContent = '';
+
+            movies.forEach((movie, index) => {
+                const activeClass = index === 0 ? 'active' : ''; // Set the first movie as active
+                sliderContent += `
+                    <div class="carousel-item ${activeClass}">
+                        <img src="${IMG_URL + movie.poster_path}" class="poster1" alt="${movie.title}">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>${movie.title}</h5>
+                            <p>Rating: ${movie.vote_average}</p>
+                        </div>
+                    </div>
+                `;
+            });
+
+            $('#sliderContent').html(sliderContent); 
+        })
+        .fail(error => {
+            console.error('Error fetching newly released movies:', error);
+        });
+}
+
+$(document).ready(function() {
+    getNewlyReleasedMovies(); // Fetch and display the movies when the page loads
+});
 
 
-// Ensure the search functionality works for the movie details page
+
+const watchlistContainer = $('#watchlist-container');
+
+// Function to load watchlist from local storage
+function loadWatchlist() {
+    const watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+    displayWatchlist(watchlist);
+}
+
+// Function to display the watchlist
+function displayWatchlist(watchlist) {
+    watchlistContainer.empty(); // Clear previous content
+
+    if (watchlist.length === 0) {
+        watchlistContainer.html('<p>Your watchlist is empty.</p>');
+        return;
+    }
+
+    watchlist.forEach(movie => {
+        const movieElement = $(`
+            <div class="col-md-3">
+                <div class="movie">
+                    <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" class="movie-poster">
+                    <h5>${movie.title}</h5>
+                    <button class="remove-from-watchlist btn btn-danger" data-id="${movie.id}">Remove</button>
+                </div>
+            </div>
+        `);
+        watchlistContainer.append(movieElement);
+    });
+
+    // Add event listeners for the remove buttons
+    $('.remove-from-watchlist').on('click', function() {
+        const movieId = $(this).data('id');
+        removeFromWatchlist(movieId);
+    });
+}
+
+// Function to remove a movie from the watchlist
+function removeFromWatchlist(movieId) {
+ const watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+    const updatedWatchlist = watchlist.filter(movie => movie.id !== movieId);
+    localStorage.setItem('watchlist', JSON.stringify(updatedWatchlist));
+    loadWatchlist();
+}
+
+// Load the watchlist on page load
+$(document).ready(function() {
+loadWatchlist();
+});
+
+
+
+// Function to add a movie to the watchlist
+function addToWatchlist(movieId) {
+    const watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+    const movie = allMovies.find(movie => movie.id === movieId); 
+    if (movie && !watchlist.some(m => m.id === movieId)) { // Check if movie already exists
+        watchlist.push(movie);
+        localStorage.setItem('watchlist', JSON.stringify(watchlist));
+        alert(`${movie.title} has been added to your watchlist!`); 
+    
+    }
+}
+
+// Add event listeners for the add to watchlist buttons
+$(document).on('click', '.add-to-watchlist', function() {
+    const movieId = $(this).data('id');
+    addToWatchlist(movieId);
+});
+
+// Link to the watchlist page
+$('.watchlist-button').on('click', function() {
+    window.location.href = '.pages/watchlist.html';
+});
+
+
+
+
+// sign in+sign up
+const form = document.getElementById('form')
+const username = document.getElementById('username')
+const email = document.getElementById('email')
+const password = document.getElementById('password')
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+    validatesInputs();
+});
+
+
+const setError = (element, message) => {
+    const inputControl = element.parentElement;
+    const errorDisplay = inputControl.querySelector('.error');
+    errorDisplay.innerText = message;
+    inputControl.classList.add('error'); 
+    inputControl.classList.remove('success'); 
+}
+
+const setSuccess = element => {
+    const inputControl = element.parentElement;
+    const errorDisplay = inputControl.querySelector('error');
+
+    errorDisplay.innerText = '';
+    inputControl.classList.add('success');
+    inputControl.classList.remove('error');
+};
+
+const isValidEmail = email => {
+    const re = /^(([^<>([\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)¦(".+"))@((\[[0-9{1,3}\.[.0-9{1,3}\.[0-9{1,3}\.[0-9{1,3}\])¦(([a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+const validatesInputs = () => {
+    const usernameValue = username.value.trim();
+    const emailValue = email.value.trim();
+    const passwordValue = password.value.trim();
+
+    if(usernameValue === '') {
+        setError(username, 'Username is required');
+    } else {
+         setSuccess(username);
+    }
+
+    if(emailValue === '') {
+        setError(email, 'Email is required');
+    } else if (!isValidEmail(emailValue)) {
+        setError(email, 'Provide a valid email address');
+    } else {
+        setSuccess(email);
+    }
+
+    
+
+    if(passwordValue === '') {
+        setError(password, 'Password is required');
+    } else if (passwordValue.length < 8) {
+        setError(password, 'Password must be at least 8 characters.')
+    } else {
+        setSuccess(password);
+    }
+
+}
+
+
+
+
+

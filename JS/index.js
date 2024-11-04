@@ -14,7 +14,7 @@ let allMovies = [];
 let displayedMovies = []; 
 
 
-// Function to fetch movies using the discover endpoint
+// Fetching movies 
 function getMovies() {
     let page = 1;
 
@@ -43,7 +43,7 @@ function getMovies() {
     fetchPage(); // Start fetching movies
 }
 
-// Function to fetch movies based on search query
+// searching movies 
 function searchMovies(query) {
     const url = `${BASE_URL}/search/movie?api_key=${API_KEY}&language=en-US&query=${encodeURIComponent(query)}`;
 

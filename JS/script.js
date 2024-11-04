@@ -15,7 +15,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-    // Check if the user is signed in
+    // dynamic display of username
     const signedInUsername = localStorage.getItem('username');
     
     if (signedInUsername) {
@@ -27,7 +27,7 @@ $(document).ready(function() {
     }
 
     $('#profile-1').click(function() {
-        window.location.href = '/pages/home.html'; // Redirect to home page
+        window.location.href = '/pages/home.html'; // profile selection 
     });
 });
 

@@ -15,3 +15,9 @@
 ![library 1](https://github.com/user-attachments/assets/20e5353d-1180-45cf-b42e-108e8d40f4d5)
 ![Home 3](https://github.com/user-attachments/assets/b8cc78fa-5512-4920-bc7c-d89aa64aa401)
 ![Home 2](https://github.com/user-attachments/assets/6353a510-2442-4d50-82fd-a01e6fc97e00)
+
+![WhatsApp Image 2024-11-04 at 15 21 26](https://github.com/user-attachments/assets/6a2ab6ba-2d74-45db-b3a5-38226fb2096d)
+![WhatsApp Image 2024-11-04 at 15 21 10](https://github.com/user-attachments/assets/9fabfcc8-dfc2-44d5-8fa3-1cee832d2fbc)
+![WhatsApp Image 2024-11-04 at 15 21 10 (1)](https://github.com/user-attachments/assets/2a1072d3-273b-4262-9db2-c0ab728c5ab7)
+we tried to host our website, but we had some complications with the hosting. We were instructed by domains to put the value as the git hub link, then it said we need to get the http git hub link instead but when we added that it said invalid. So we wre very confused on how to upload it, the domain is bought as well as the hosting package it is just difficult to get the website hosted. 
+
